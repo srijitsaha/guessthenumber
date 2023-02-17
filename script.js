@@ -10,7 +10,6 @@ let click = new Audio("clickSound.mp3")
 
 const init = () => {
     computerGuess = Math.floor(Math.random() * 100)
-//     console.log(computerGuess);
     document.getElementById("newGameButton").style.display = "none"
     document.getElementById("gameArea").style.display = "none"
 }
