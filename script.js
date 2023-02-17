@@ -10,7 +10,7 @@ let click = new Audio("clickSound.mp3")
 
 const init = () => {
     computerGuess = Math.floor(Math.random() * 100)
-//     console.log(computerGuess);
+    console.log(computerGuess);
     document.getElementById("newGameButton").style.display = "none"
     document.getElementById("gameArea").style.display = "none"
 }
@@ -43,54 +43,61 @@ const startNewGame = () => {
 const compareGuess = () => {
     click.play()
     const userNumber = Number(document.getElementById("inputBox").value)
-    userGuess = [...userGuess, userNumber]
-    document.getElementById("guesses").innerHTML = userGuess
+    userNumberLength = document.getElementById("inputBox").value.length
 
-    if (userGuess.length < maxGuess) {
-        if (userNumber > computerGuess) {
-            userGuessUpdate.innerHTML = "Your guess is High ☹"
-            userNumberUpdate.value = ""
-        }
-        else if (userNumber < computerGuess) {
-            userGuessUpdate.innerHTML = "Your guess is Low 🙃"
-            userNumberUpdate.value = ""
-        }
-        else if (userNumber == computerGuess) {
-            userGuessUpdate.innerHTML = "Congrats!!! It's Correct"
-            userGuessUpdate.style.color = "#027a06"
-            userNumberUpdate.value = ""
-            startNewGame()
-        }
-        else {
-            userGuessUpdate.innerHTML = "Some error occured"
-            userNumberUpdate.value = ""
-        }
-    }
-    else {
-        if (userNumber > computerGuess) {
-            userGuessUpdate.innerHTML = `Sorry!!! You loose! Correct answer is : ${computerGuess}`
-            userGuessUpdate.style.color = "#3cb52b"
-            userNumberUpdate.value = ""
-            startNewGame()
-        }
-        else if (userNumber < computerGuess) {
-            userGuessUpdate.innerHTML = `Sorry!!! You loose! Correct answer is : ${computerGuess}`
-            userGuessUpdate.style.color = "#3cb52b"
-            userNumberUpdate.value = ""
-            startNewGame()
-        }
-        else if (userNumber == computerGuess) {
-            userGuessUpdate.innerHTML = "Congrats!!! It's Correct"
-            userGuessUpdate.style.color = "#027a06"
-            userNumberUpdate.value = ""
-            startNewGame()
+    if (userNumberLength <= 2) {
+        userGuess = [...userGuess, userNumber]
+        document.getElementById("guesses").innerHTML = userGuess
+        document.getElementById("warningPara").innerHTML = ""
+
+        if (userGuess.length < maxGuess) {
+            if (userNumber > computerGuess) {
+                userGuessUpdate.innerHTML = "Your guess is High ☹"
+                userNumberUpdate.value = ""
+            }
+            else if (userNumber < computerGuess) {
+                userGuessUpdate.innerHTML = "Your guess is Low 🙃"
+                userNumberUpdate.value = ""
+            }
+            else if (userNumber == computerGuess) {
+                userGuessUpdate.innerHTML = "Congrats!!! It's Correct"
+                userGuessUpdate.style.color = "#027a06"
+                userNumberUpdate.value = ""
+                startNewGame()
+            }
+            else {
+                userGuessUpdate.innerHTML = "Some error occured"
+                userNumberUpdate.value = ""
+            }
         }
         else {
-            userGuessUpdate.innerHTML = "Some error occured"
-            userGuessUpdate.style.color = "#5ded4a"
-            userNumberUpdate.value = ""
-            startNewGame()
+            if (userNumber > computerGuess) {
+                userGuessUpdate.innerHTML = `Sorry!!! You loose! Correct answer is : ${computerGuess}`
+                userGuessUpdate.style.color = "#3cb52b"
+                userNumberUpdate.value = ""
+                startNewGame()
+            }
+            else if (userNumber < computerGuess) {
+                userGuessUpdate.innerHTML = `Sorry!!! You loose! Correct answer is : ${computerGuess}`
+                userGuessUpdate.style.color = "#3cb52b"
+                userNumberUpdate.value = ""
+                startNewGame()
+            }
+            else if (userNumber == computerGuess) {
+                userGuessUpdate.innerHTML = "Congrats!!! It's Correct"
+                userGuessUpdate.style.color = "#027a06"
+                userNumberUpdate.value = ""
+                startNewGame()
+            }
+            else {
+                userGuessUpdate.innerHTML = "Some error occured"
+                userGuessUpdate.style.color = "#5ded4a"
+                userNumberUpdate.value = ""
+                startNewGame()
+            }
         }
+    }else{
+        document.getElementById("warningPara").innerHTML = "Number should be between 0 and 100"
     }
 
     document.getElementById("attempts").innerHTML = userGuess.length
