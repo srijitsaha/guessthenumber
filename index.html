@@ -25,10 +25,11 @@
             <div id="newGameButton">
                 <button onclick="newGameBegin()">New Game</button>
             </div>
-
+            
             <section>
                 <h3 id="textOutput">Your Guess</h3>
-                <input  type="number" name="inputBox"  id="inputBox"  min="1"  max="100"  placeholder="Enter Your Number" onchange="compareGuess()"/>
+                <input type="number" name="inputBox" id="inputBox" min=1 max=100 placeholder="Enter Your Number" onchange="compareGuess()">
+                <p id="warningPara"></p>
             </section>
             <section class="stats">
                 <div class="info">
