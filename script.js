@@ -56,7 +56,8 @@ const compareGuess = () => {
             userNumberUpdate.value = ""
         }
         else if (userNumber == computerGuess) {
-            userGuessUpdate.innerHTML = "It's Correct ☹"
+            userGuessUpdate.innerHTML = "Congrats!!! It's Correct"
+            userGuessUpdate.style.color = "#027a06"
             userNumberUpdate.value = ""
             startNewGame()
         }
@@ -67,22 +68,26 @@ const compareGuess = () => {
     }
     else {
         if (userNumber > computerGuess) {
-            userGuessUpdate.innerHTML = `You loose!! Correct answer is : ${computerGuess}`
+            userGuessUpdate.innerHTML = `Sorry!!! You loose! Correct answer is : ${computerGuess}`
+            userGuessUpdate.style.color = "#3cb52b"
             userNumberUpdate.value = ""
             startNewGame()
         }
         else if (userNumber < computerGuess) {
-            userGuessUpdate.innerHTML = `You loose!! Correct answer is : ${computerGuess}`
+            userGuessUpdate.innerHTML = `Sorry!!! You loose! Correct answer is : ${computerGuess}`
+            userGuessUpdate.style.color = "#3cb52b"
             userNumberUpdate.value = ""
             startNewGame()
         }
         else if (userNumber == computerGuess) {
-            userGuessUpdate.innerHTML = "It's Correct ☹"
+            userGuessUpdate.innerHTML = "Congrats!!! It's Correct"
+            userGuessUpdate.style.color = "#027a06"
             userNumberUpdate.value = ""
             startNewGame()
         }
         else {
             userGuessUpdate.innerHTML = "Some error occured"
+            userGuessUpdate.style.color = "#5ded4a"
             userNumberUpdate.value = ""
             startNewGame()
         }
