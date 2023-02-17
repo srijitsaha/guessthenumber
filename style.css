@@ -23,14 +23,14 @@ body{
     align-items: center;
     justify-content: center;
     margin: auto;
-    background-color: #491569;
+    background-color: rgb(55, 55, 216);
 }
 
 main{
     width: 30vw;
     text-align: center;
     background-color: var(--background);
-    border: solid var(--dark);
+    border: solid rgba(42, 42, 196, 0.856);
     border-width: 0.8rem;
     border-radius: 1rem;
     padding: 3rem 5rem;
@@ -68,7 +68,7 @@ img{
 
 button{
     max-width: 28rem;
-    background-image: linear-gradient(92.88deg, #455eb3 9%, #5643cc 44%, #673fd7 664%);
+    background-color: rgb(93, 202, 20);
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
@@ -90,7 +90,7 @@ button:hover{
 }
 
 button:last-child{
-    background: var(--dark);
+    background: rgb(167, 29, 29);
     margin-bottom: 0;
 }
 
@@ -104,6 +104,7 @@ button:last-child{
 
 #newGameButton button{
     margin: 2rem 0;
+    background-color: rgb(51, 165, 218);
 }
 
 input{
@@ -130,7 +131,7 @@ input{
 
 .info span{
     font-size: 2rem;
-    color: #ff0511;
+    color: rgb(4, 34, 168);
 }
 
 @media only screen and (max-width : 500px){
