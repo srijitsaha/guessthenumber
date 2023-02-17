@@ -117,6 +117,10 @@ input{
     font-family: 'Josephin Sans', sans-serif;
 }
 
+#warningPara{
+    color: red;
+}
+
 .stats{
     text-align: left;
     margin-bottom: 4rem;
